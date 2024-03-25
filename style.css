@@ -1,0 +1,65 @@
+
+    
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.holi-text {
+  font-size: 72px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: color-change 5s infinite alternate, gradient-change 5s infinite alternate;
+  background: linear-gradient(to right, #ffcc00, #ff0000, #00ff00, #0000ff, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Sonsie One", system-ui;
+  /* font-family: "Rubik Gemstones", system-ui; */
+font-weight: 400;
+font-style: normal;
+}
+@keyframes gradient-change {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+@keyframes color-change {
+  0% { color: #ffcc00; }
+  25% { color: #ff0000; }
+  50% { color: #00ff00; }
+  75% { color: #0000ff; }
+  100% { color: #ffcc00; }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.color-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.7;
+  animation: move-bubble 6s linear infinite;
+}
+
+@keyframes move-bubble {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-100vh) scale(0.6); opacity: 0; }
+  100% { transform: translateY(-200vh) scale(1); opacity: 0.6; }
+}
